@@ -1,0 +1,21 @@
+<!--
+  ~ /**
+  ~  * Created by Candra Ibra Sanie on 11/19/19 7:33 AM
+  ~  * Copyright (c) 2019 . All rights reserved.
+  ~  * Last modified 11/19/19 6:04 AM
+  ~  */
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.candraibra.catmovie3">
+
+    <!--Internet Permission-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".testing.SingleFragmentActivity" />
+    </application>
+
+
+</manifest>
