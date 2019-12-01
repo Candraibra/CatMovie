@@ -12,15 +12,18 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.candraibra.catmovie3.data.Repository;
 import com.candraibra.catmovie3.data.entity.movie.MovieResults;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MovieViewModel extends ViewModel {
     private Repository repository;
+    private MutableLiveData<List<MovieResults>> movieResults = new MutableLiveData<>();
 
     MovieViewModel(@NonNull Repository repository) {
         this.repository = repository;
@@ -33,7 +36,9 @@ public class MovieViewModel extends ViewModel {
     }
 
     public LiveData<List<MovieResults>> mLiveMovieData() {
-        return repository.mLiveMovieData();
+        if (movieResults.getValue() == null){
+            repository.mLiveMovieData(movieResults);
+        }
+        return movieResults;
     }
-
 }

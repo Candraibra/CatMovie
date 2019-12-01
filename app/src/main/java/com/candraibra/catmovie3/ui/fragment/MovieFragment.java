@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -68,10 +67,10 @@ public class MovieFragment extends Fragment {
         if (getActivity() != null) {
             viewModel = obtainViewModel(getActivity());
             viewModel.mLiveMovieData().observe(this, results -> {
-                MovieAdapter movieAdapter = new MovieAdapter(getActivity(), results);
-                shimmer.stopShimmer();
-                shimmer.setVisibility(View.GONE);
                 if (results != null) {
+                    MovieAdapter movieAdapter = new MovieAdapter(getActivity(), results);
+                    shimmer.stopShimmer();
+                    shimmer.setVisibility(View.GONE);
                     ItemClickSupport.addTo(recyclerView).setOnItemClickListener((recyclerView, position, v) -> {
                         Intent intent = new Intent(getActivity(), DetailMovieActivity.class);
                         intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, results.get(position));
@@ -81,9 +80,6 @@ public class MovieFragment extends Fragment {
                     recyclerView.setHasFixedSize(true);
                     recyclerView.setAdapter(movieAdapter);
                     movieAdapter.notifyDataSetChanged();
-
-                } else {
-                    Toast.makeText(getActivity(), "List Null", Toast.LENGTH_SHORT).show();
                 }
             });
 

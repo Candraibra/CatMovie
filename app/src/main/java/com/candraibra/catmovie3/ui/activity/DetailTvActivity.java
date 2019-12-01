@@ -61,7 +61,23 @@ public class DetailTvActivity extends AppCompatActivity {
             onBackPressed();
             finish();
         });
-        btnFav.setOnClickListener(v -> Toast.makeText(this, "Feature not ready yet", Toast.LENGTH_SHORT).show());
+        viewModel.getTvByIdRoom().observe(this, results -> {
+            if (results == null) {
+                btnFav.setImageResource(R.drawable.ic_favorite_border);
+                btnFav.setOnClickListener(v -> {
+                    viewModel.insertTv(selectedTv);
+                    Toast.makeText(this, "Success Add to Favorite", Toast.LENGTH_SHORT).show();
+                });
+
+            } else {
+                btnFav.setImageResource(R.drawable.ic_favorite);
+                btnFav.setOnClickListener(v -> {
+                    viewModel.deleteTv(selectedTv);
+                    Toast.makeText(this, "Success Remove from Favorite", Toast.LENGTH_SHORT).show();
+                });
+            }
+        });
+
         if (selectedTv.getId() != 0) {
             EspressoIdlingResource.increment();
             viewModel.getTvById().observe(this, results -> {

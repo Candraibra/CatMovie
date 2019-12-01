@@ -17,6 +17,8 @@ import com.candraibra.catmovie3.data.Repository;
 import com.candraibra.catmovie3.data.entity.movie.MovieResults;
 import com.candraibra.catmovie3.data.entity.tv.TvResults;
 
+import java.util.List;
+
 public class DetailViewModel extends ViewModel {
 
     private Integer movieId;
@@ -55,6 +57,30 @@ public class DetailViewModel extends ViewModel {
 
     public LiveData<TvResults> getTvById() {
         return repository.mLiveTvDataById(tvId);
+    }
+
+    public LiveData<TvResults> getTvByIdRoom() {
+        return repository.getTvByIdRoom(tvId);
+    }
+
+    public void insertTv(TvResults tvResults) {
+        repository.insertTv(tvResults);
+    }
+
+    public void deleteTv(TvResults tvResults) {
+        repository.deleteTv(tvResults);
+    }
+
+    public LiveData<MovieResults> getMovieByIdRoom() {
+        return repository.getMovieByIdRoom(movieId);
+    }
+
+    public void insertMovie(MovieResults movieResults) {
+        repository.insertMovie(movieResults);
+    }
+
+    public void deleteMovie(MovieResults movieResults) {
+        repository.deleteMovie(movieResults);
     }
 
 }

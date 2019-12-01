@@ -11,6 +11,7 @@ package com.candraibra.catmovie3.viewmodel;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.candraibra.catmovie3.data.Repository;
@@ -20,6 +21,7 @@ import java.util.List;
 
 public class TvViewModel extends ViewModel {
     private Repository repository;
+    private MutableLiveData<List<TvResults>> tvResults = new MutableLiveData<>();
 
 
     TvViewModel(Repository repository) {
@@ -33,7 +35,10 @@ public class TvViewModel extends ViewModel {
     }
 
     public LiveData<List<TvResults>> mLiveTvData() {
-        return repository.mLiveTvData();
+        if (tvResults.getValue() == null) {
+            repository.mLiveTvData(tvResults);
+        }
+        return tvResults;
     }
 
 }

@@ -13,10 +13,16 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
 import com.candraibra.catmovie3.data.entity.movie.MovieResults;
+import com.candraibra.catmovie3.data.entity.tv.TvResults;
+import com.candraibra.catmovie3.database.dao.MovieDao;
+import com.candraibra.catmovie3.database.dao.TvDao;
+import com.candraibra.catmovie3.utils.Converter;
 
-@Database(entities = {MovieResults.class}, version = 1, exportSchema = false)
+@Database(entities = {MovieResults.class, TvResults.class}, version = 1, exportSchema = false)
+@TypeConverters(Converter.class)
 public abstract class MovieRoomDatabase extends RoomDatabase {
     private static volatile MovieRoomDatabase INSTANCE;
 
@@ -33,5 +39,8 @@ public abstract class MovieRoomDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    public abstract MovieDao tvDao();
+    public abstract MovieDao movieDao();
+
+    public abstract TvDao tvDao();
+
 }

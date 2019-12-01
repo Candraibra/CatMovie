@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -57,10 +56,10 @@ public class TvFragment extends Fragment {
             ViewModelFactory factory = ViewModelFactory.getInstance(getActivity().getApplication());
             TvViewModel viewModel = ViewModelProviders.of(this, factory).get(TvViewModel.class);
             viewModel.mLiveTvData().observe(this, results -> {
-                TvAdapter tvAdapter = new TvAdapter(getActivity(), results);
-                shimmer.stopShimmer();
-                shimmer.setVisibility(View.GONE);
                 if (results != null) {
+                    TvAdapter tvAdapter = new TvAdapter(getActivity(), results);
+                    shimmer.stopShimmer();
+                    shimmer.setVisibility(View.GONE);
                     ItemClickSupport.addTo(recyclerView).setOnItemClickListener((recyclerView, position, v) -> {
                         Intent intent = new Intent(getActivity(), DetailTvActivity.class);
                         intent.putExtra(DetailTvActivity.EXTRA_TV, results.get(position));
@@ -70,8 +69,6 @@ public class TvFragment extends Fragment {
                     recyclerView.setHasFixedSize(true);
                     recyclerView.setAdapter(tvAdapter);
                     tvAdapter.notifyDataSetChanged();
-                } else {
-                    Toast.makeText(getActivity(), "List Null", Toast.LENGTH_SHORT).show();
                 }
             });
         }

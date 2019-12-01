@@ -13,12 +13,14 @@ import android.os.Parcelable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
-@Entity
+@Entity(tableName = "tvTable")
 public class TvResults implements Parcelable {
 
     @ColumnInfo(name = "first_air_date")
@@ -33,7 +35,7 @@ public class TvResults implements Parcelable {
     @SerializedName("original_language")
     private String originalLanguage;
 
-    @ColumnInfo(name = "genre_ids")
+    @Ignore
     @SerializedName("genre_ids")
     private List<Integer> genreIds;
 
@@ -41,7 +43,7 @@ public class TvResults implements Parcelable {
     @SerializedName("poster_path")
     private String posterPath;
 
-    @ColumnInfo(name = "origin_country")
+    @Ignore
     @SerializedName("origin_country")
     private List<String> originCountry;
 
@@ -65,6 +67,7 @@ public class TvResults implements Parcelable {
     @SerializedName("name")
     private String name;
 
+    @PrimaryKey
     @ColumnInfo(name = "id")
     @SerializedName("id")
     private int id;
@@ -190,13 +193,11 @@ public class TvResults implements Parcelable {
         }
     };
 
-    public TvResults(String firstAirDate, String overview, String originalLanguage, List<Integer> genreIds, String posterPath, List<String> originCountry, String backdropPath, String originalName, double popularity, double voteAverage, String name, int id, int voteCount) {
+    public TvResults(String firstAirDate, String overview, String originalLanguage,  String posterPath,  String backdropPath, String originalName, double popularity, double voteAverage, String name, int id, int voteCount) {
         this.firstAirDate = firstAirDate;
         this.overview = overview;
         this.originalLanguage = originalLanguage;
-        this.genreIds = genreIds;
         this.posterPath = posterPath;
-        this.originCountry = originCountry;
         this.backdropPath = backdropPath;
         this.originalName = originalName;
         this.popularity = popularity;

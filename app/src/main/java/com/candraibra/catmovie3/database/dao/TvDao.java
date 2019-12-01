@@ -1,12 +1,12 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/1/19 11:41 AM
+ *  * Created by Candra Ibra Sanie on 12/1/19 4:47 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 11:41 AM
+ *  * Last modified 12/1/19 4:33 PM
  *
  */
 
-package com.candraibra.catmovie3.database;
+package com.candraibra.catmovie3.database.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -26,12 +26,12 @@ public interface TvDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(TvResults tv);
 
-    @Update()
-    void update(TvResults tv);
-
     @Delete()
     void delete(TvResults tv);
 
-    @Query("SELECT * from tvresults ORDER BY name ASC")
+    @Query("SELECT * from tvTable ORDER BY name ASC")
     LiveData<List<TvResults>> getAllTv();
+
+    @Query("SELECT * from tvTable WHERE id =:id")
+    LiveData<TvResults> getTvById(int id);
 }

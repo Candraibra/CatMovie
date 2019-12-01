@@ -13,13 +13,18 @@ import android.os.Parcelable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(tableName = "movieTable")
 public class MovieResults implements Parcelable {
 
     @ColumnInfo(name = "overview")
@@ -42,7 +47,7 @@ public class MovieResults implements Parcelable {
     @SerializedName("title")
     private String title;
 
-    @ColumnInfo(name = "genre_ids")
+    @Ignore
     @SerializedName("genre_ids")
     private List<Integer> genreIds;
 
@@ -66,6 +71,7 @@ public class MovieResults implements Parcelable {
     @SerializedName("vote_average")
     private double voteAverage;
 
+    @PrimaryKey
     @ColumnInfo(name = "id")
     @SerializedName("id")
     private int id;
@@ -190,13 +196,12 @@ public class MovieResults implements Parcelable {
         this.voteCount = voteCount;
     }
 
-    public MovieResults(String overview, String originalLanguage, String originalTitle, boolean video, String title, List<Integer> genreIds, String posterPath, String backdropPath, String releaseDate, double popularity, double voteAverage, int id, boolean adult, int voteCount) {
+    public MovieResults(String overview, String originalLanguage, String originalTitle, boolean video, String title, String posterPath, String backdropPath, String releaseDate, double popularity, double voteAverage, int id, boolean adult, int voteCount) {
         this.overview = overview;
         this.originalLanguage = originalLanguage;
         this.originalTitle = originalTitle;
         this.video = video;
         this.title = title;
-        this.genreIds = genreIds;
         this.posterPath = posterPath;
         this.backdropPath = backdropPath;
         this.releaseDate = releaseDate;
@@ -260,4 +265,5 @@ public class MovieResults implements Parcelable {
             return new MovieResults[size];
         }
     };
+
 }

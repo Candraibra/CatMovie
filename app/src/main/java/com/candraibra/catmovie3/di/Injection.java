@@ -15,7 +15,7 @@ import com.candraibra.catmovie3.service.NetworkCall;
 
 public class Injection {
     public static Repository provideRepository(Application application) {
-        NetworkCall networkCall = NetworkCall.getInstance(application);
-        return Repository.getInstance(networkCall);
+        NetworkCall networkCall = NetworkCall.getInstance();
+        return Repository.getInstance(networkCall,application);
     }
 }

@@ -48,6 +48,7 @@ public class DetailMovieActivity extends AppCompatActivity {
     @BindView(R.id.btn_fav)
     public ImageButton btnFav;
 
+    DetailViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +58,29 @@ public class DetailMovieActivity extends AppCompatActivity {
         MovieResults selectedMovie;
         selectedMovie = getIntent().getParcelableExtra(EXTRA_MOVIE);
         ViewModelFactory factory = ViewModelFactory.getInstance(this.getApplication());
-        DetailViewModel viewModel = ViewModelProviders.of(this, factory).get(DetailViewModel.class);
+        viewModel = ViewModelProviders.of(this, factory).get(DetailViewModel.class);
         viewModel.setMovieId(Objects.requireNonNull(selectedMovie).getId());
         btnBack.setOnClickListener(v -> {
             onBackPressed();
             finish();
         });
-        btnFav.setOnClickListener(v -> Toast.makeText(this, "Feature not ready yet", Toast.LENGTH_SHORT).show());
+        viewModel.getMovieByIdRoom().observe(this, results -> {
+            if (results == null) {
+                btnFav.setImageResource(R.drawable.ic_favorite_border);
+                btnFav.setOnClickListener(v -> {
+                    viewModel.insertMovie(selectedMovie);
+                    Toast.makeText(this, "Success Add to Favorite", Toast.LENGTH_SHORT).show();
+                });
+            } else {
+                btnFav.setImageResource(R.drawable.ic_favorite);
+                btnFav.setOnClickListener(v -> {
+                    viewModel.deleteMovie(selectedMovie);
+                    Toast.makeText(this, "Success Remove from Favorite", Toast.LENGTH_SHORT).show();
+                });
+            }
+        });
+
+
         if (selectedMovie.getId() != 0) {
             EspressoIdlingResource.increment();
             viewModel.getMovieById().observe(this, results -> {

@@ -8,17 +8,16 @@
 
 package com.candraibra.catmovie3.service;
 
-import android.app.Application;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.candraibra.catmovie3.BuildConfig;
-import com.candraibra.catmovie3.data.network.movie.MovieResponse;
 import com.candraibra.catmovie3.data.entity.movie.MovieResults;
-import com.candraibra.catmovie3.data.network.tv.TvResponse;
 import com.candraibra.catmovie3.data.entity.tv.TvResults;
+import com.candraibra.catmovie3.data.network.movie.MovieResponse;
+import com.candraibra.catmovie3.data.network.tv.TvResponse;
 import com.candraibra.catmovie3.utils.EspressoIdlingResource;
 
 import org.jetbrains.annotations.NotNull;
@@ -34,22 +33,18 @@ public class NetworkCall {
     private static NetworkCall INSTANCE;
     private static TMDBApi apiClient = ApiClient.getClient().create(TMDBApi.class);
 
-    private Application application;
-
-    private NetworkCall(Application application) {
-        this.application = application;
+    private NetworkCall() {
     }
 
-    public static NetworkCall getInstance(Application application) {
+    public static NetworkCall getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new NetworkCall(application);
+            INSTANCE = new NetworkCall();
         }
         return INSTANCE;
     }
 
-    public LiveData<List<TvResults>> getPopularTv() {
+    public void getPopularTv(MutableLiveData<List<TvResults>> liveData) {
         EspressoIdlingResource.increment();
-        MutableLiveData<List<TvResults>> tvData = new MutableLiveData<>();
         Call<TvResponse> tvResponseCall = apiClient.getTvPopular(BuildConfig.ApiKey, LANGUAGE, 1);
         tvResponseCall.enqueue(new Callback<TvResponse>() {
             @Override
@@ -57,7 +52,7 @@ public class NetworkCall {
                 if (response.isSuccessful()) {
                     TvResponse tvResponse = response.body();
                     if (tvResponse != null && tvResponse.getResults() != null) {
-                        tvData.postValue(tvResponse.getResults());
+                        liveData.postValue(tvResponse.getResults());
                     } else {
                         Log.d("NetworkCall", "Empty Data");
                     }
@@ -70,7 +65,6 @@ public class NetworkCall {
             }
         });
         EspressoIdlingResource.decrement();
-        return tvData;
     }
 
 //    public static LiveData<List<MovieResults>> getDataMovie() {
@@ -81,9 +75,8 @@ public class NetworkCall {
 //        return tvData;
 //    }
 
-    public LiveData<List<MovieResults>> getPopularMovie() {
+    public void getPopularMovie(MutableLiveData<List<MovieResults>> liveData) {
         EspressoIdlingResource.increment();
-        MutableLiveData<List<MovieResults>> movieData = new MutableLiveData<>();
         Call<MovieResponse> call = apiClient.getMoviePopular(BuildConfig.ApiKey, LANGUAGE, 1);
         call.enqueue(new Callback<MovieResponse>() {
             @Override
@@ -91,7 +84,7 @@ public class NetworkCall {
                 if (response.isSuccessful()) {
                     MovieResponse moviesResponse = response.body();
                     if (moviesResponse != null && moviesResponse.getResults() != null) {
-                        movieData.postValue(moviesResponse.getResults());
+                        liveData.postValue(moviesResponse.getResults());
                     } else {
                         Log.d("NetworkCall", "Empty Data");
                     }
@@ -104,8 +97,6 @@ public class NetworkCall {
             }
         });
         EspressoIdlingResource.decrement();
-        return movieData;
-
     }
 
     public LiveData<MovieResults> getMovieById(int id) {
