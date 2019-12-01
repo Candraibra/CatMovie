@@ -8,5 +8,6 @@
     <string name="popular_in_catmovie">Popular in CatMovie</string>
     <string name="desc">Description</string>
     <string name="title">Title</string>
+    <string name="favorite">Favorite</string>
 
 </resources>

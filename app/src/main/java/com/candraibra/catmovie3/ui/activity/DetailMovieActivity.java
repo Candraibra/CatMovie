@@ -22,7 +22,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
 import com.candraibra.catmovie3.R;
-import com.candraibra.catmovie3.data.network.movie.MovieResults;
+import com.candraibra.catmovie3.data.entity.movie.MovieResults;
 import com.candraibra.catmovie3.utils.EspressoIdlingResource;
 import com.candraibra.catmovie3.viewmodel.DetailViewModel;
 import com.candraibra.catmovie3.viewmodel.ViewModelFactory;

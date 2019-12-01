@@ -10,8 +10,8 @@ package com.candraibra.catmovie3.data;
 
 import androidx.lifecycle.LiveData;
 
-import com.candraibra.catmovie3.data.network.movie.MovieResults;
-import com.candraibra.catmovie3.data.network.tv.TvResults;
+import com.candraibra.catmovie3.data.entity.movie.MovieResults;
+import com.candraibra.catmovie3.data.entity.tv.TvResults;
 import com.candraibra.catmovie3.service.NetworkCall;
 
 import java.util.List;

@@ -1,73 +1,75 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/1/19 11:30 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/18/19 11:01 AM
+ *  * Last modified 11/28/19 11:13 AM
  *
  */
 
-package com.candraibra.catmovie3.data.network.tv;
+package com.candraibra.catmovie3.data.entity.tv;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
 public class TvResults implements Parcelable {
-    public static final Parcelable.Creator<TvResults> CREATOR = new Parcelable.Creator<TvResults>() {
-        @Override
-        public TvResults createFromParcel(Parcel source) {
-            return new TvResults(source);
-        }
 
-        @Override
-        public TvResults[] newArray(int size) {
-            return new TvResults[size];
-        }
-    };
-
-    public TvResults(String firstAirDate, String overview, String originalLanguage, List<Integer> genreIds, String posterPath, List<String> originCountry, String backdropPath, String originalName, double popularity, double voteAverage, String name, int id, int voteCount) {
-        this.firstAirDate = firstAirDate;
-        this.overview = overview;
-        this.originalLanguage = originalLanguage;
-        this.genreIds = genreIds;
-        this.posterPath = posterPath;
-        this.originCountry = originCountry;
-        this.backdropPath = backdropPath;
-        this.originalName = originalName;
-        this.popularity = popularity;
-        this.voteAverage = voteAverage;
-        this.name = name;
-        this.id = id;
-        this.voteCount = voteCount;
-    }
+    @ColumnInfo(name = "first_air_date")
     @SerializedName("first_air_date")
     private String firstAirDate;
+
+    @ColumnInfo(name = "overview")
     @SerializedName("overview")
     private String overview;
+
+    @ColumnInfo(name = "original_language")
     @SerializedName("original_language")
     private String originalLanguage;
+
+    @ColumnInfo(name = "genre_ids")
     @SerializedName("genre_ids")
     private List<Integer> genreIds;
+
+    @ColumnInfo(name = "poster_path")
     @SerializedName("poster_path")
     private String posterPath;
+
+    @ColumnInfo(name = "origin_country")
     @SerializedName("origin_country")
     private List<String> originCountry;
+
+    @ColumnInfo(name = "backdrop_path")
     @SerializedName("backdrop_path")
     private String backdropPath;
+
+    @ColumnInfo(name = "original_name")
     @SerializedName("original_name")
     private String originalName;
+
+    @ColumnInfo(name = "popularity")
     @SerializedName("popularity")
     private double popularity;
+
+    @ColumnInfo(name = "vote_average")
     @SerializedName("vote_average")
     private double voteAverage;
+
+    @ColumnInfo(name = "name")
     @SerializedName("name")
     private String name;
+
+    @ColumnInfo(name = "id")
     @SerializedName("id")
     private int id;
+
+    @ColumnInfo(name = "vote_count")
     @SerializedName("vote_count")
     private int voteCount;
 
@@ -173,6 +175,34 @@ public class TvResults implements Parcelable {
     }
 
     public void setVoteCount(int voteCount) {
+        this.voteCount = voteCount;
+    }
+
+    public static final Parcelable.Creator<TvResults> CREATOR = new Parcelable.Creator<TvResults>() {
+        @Override
+        public TvResults createFromParcel(Parcel source) {
+            return new TvResults(source);
+        }
+
+        @Override
+        public TvResults[] newArray(int size) {
+            return new TvResults[size];
+        }
+    };
+
+    public TvResults(String firstAirDate, String overview, String originalLanguage, List<Integer> genreIds, String posterPath, List<String> originCountry, String backdropPath, String originalName, double popularity, double voteAverage, String name, int id, int voteCount) {
+        this.firstAirDate = firstAirDate;
+        this.overview = overview;
+        this.originalLanguage = originalLanguage;
+        this.genreIds = genreIds;
+        this.posterPath = posterPath;
+        this.originCountry = originCountry;
+        this.backdropPath = backdropPath;
+        this.originalName = originalName;
+        this.popularity = popularity;
+        this.voteAverage = voteAverage;
+        this.name = name;
+        this.id = id;
         this.voteCount = voteCount;
     }
 

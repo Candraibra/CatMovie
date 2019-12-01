@@ -1,78 +1,80 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/1/19 11:29 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/18/19 11:01 AM
+ *  * Last modified 12/1/19 11:26 AM
  *
  */
 
-package com.candraibra.catmovie3.data.network.movie;
+package com.candraibra.catmovie3.data.entity.movie;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class MovieResults implements Parcelable {
-    public MovieResults(String overview, String originalLanguage, String originalTitle, boolean video, String title, List<Integer> genreIds, String posterPath, String backdropPath, String releaseDate, double popularity, double voteAverage, int id, boolean adult, int voteCount) {
-        this.overview = overview;
-        this.originalLanguage = originalLanguage;
-        this.originalTitle = originalTitle;
-        this.video = video;
-        this.title = title;
-        this.genreIds = genreIds;
-        this.posterPath = posterPath;
-        this.backdropPath = backdropPath;
-        this.releaseDate = releaseDate;
-        this.popularity = popularity;
-        this.voteAverage = voteAverage;
-        this.id = id;
-        this.adult = adult;
-        this.voteCount = voteCount;
-    }
 
+    @ColumnInfo(name = "overview")
     @SerializedName("overview")
     private String overview;
 
+    @ColumnInfo(name = "original_language")
     @SerializedName("original_language")
     private String originalLanguage;
 
+    @ColumnInfo(name = "original_title")
     @SerializedName("original_title")
     private String originalTitle;
 
+    @ColumnInfo(name = "video")
     @SerializedName("video")
     private boolean video;
 
+    @ColumnInfo(name = "title")
     @SerializedName("title")
     private String title;
 
+    @ColumnInfo(name = "genre_ids")
     @SerializedName("genre_ids")
     private List<Integer> genreIds;
 
+    @ColumnInfo(name = "poster_path")
     @SerializedName("poster_path")
     private String posterPath;
 
+    @ColumnInfo(name = "backdrop_path")
     @SerializedName("backdrop_path")
     private String backdropPath;
 
+    @ColumnInfo(name = "release_date")
     @SerializedName("release_date")
     private String releaseDate;
 
+    @ColumnInfo(name = "popularity")
     @SerializedName("popularity")
     private double popularity;
 
+    @ColumnInfo(name = "vote_average")
     @SerializedName("vote_average")
     private double voteAverage;
 
+    @ColumnInfo(name = "id")
     @SerializedName("id")
     private int id;
 
+    @ColumnInfo(name = "adult")
     @SerializedName("adult")
     private boolean adult;
 
+    @ColumnInfo(name = "vote_count")
     @SerializedName("vote_count")
     private int voteCount;
 
@@ -185,6 +187,23 @@ public class MovieResults implements Parcelable {
     }
 
     public void setVoteCount(int voteCount) {
+        this.voteCount = voteCount;
+    }
+
+    public MovieResults(String overview, String originalLanguage, String originalTitle, boolean video, String title, List<Integer> genreIds, String posterPath, String backdropPath, String releaseDate, double popularity, double voteAverage, int id, boolean adult, int voteCount) {
+        this.overview = overview;
+        this.originalLanguage = originalLanguage;
+        this.originalTitle = originalTitle;
+        this.video = video;
+        this.title = title;
+        this.genreIds = genreIds;
+        this.posterPath = posterPath;
+        this.backdropPath = backdropPath;
+        this.releaseDate = releaseDate;
+        this.popularity = popularity;
+        this.voteAverage = voteAverage;
+        this.id = id;
+        this.adult = adult;
         this.voteCount = voteCount;
     }
 

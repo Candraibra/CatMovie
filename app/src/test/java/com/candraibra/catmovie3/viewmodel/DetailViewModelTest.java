@@ -13,8 +13,8 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
 import com.candraibra.catmovie3.data.Repository;
-import com.candraibra.catmovie3.data.network.movie.MovieResults;
-import com.candraibra.catmovie3.data.network.tv.TvResults;
+import com.candraibra.catmovie3.data.entity.movie.MovieResults;
+import com.candraibra.catmovie3.data.entity.tv.TvResults;
 import com.candraibra.catmovie3.utils.FakeDataDummy;
 
 import org.junit.Before;

@@ -14,7 +14,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.candraibra.catmovie3.data.Repository;
-import com.candraibra.catmovie3.data.network.tv.TvResults;
+import com.candraibra.catmovie3.data.entity.tv.TvResults;
 
 import java.util.List;
 

@@ -8,6 +8,7 @@
 
 package com.candraibra.catmovie3.data.network.tv;
 
+import com.candraibra.catmovie3.data.entity.tv.TvResults;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;

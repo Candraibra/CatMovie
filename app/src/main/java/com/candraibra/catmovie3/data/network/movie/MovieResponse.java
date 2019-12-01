@@ -10,6 +10,7 @@ package com.candraibra.catmovie3.data.network.movie;
 
 import java.util.List;
 
+import com.candraibra.catmovie3.data.entity.movie.MovieResults;
 import com.google.gson.annotations.SerializedName;
 
 public class MovieResponse{

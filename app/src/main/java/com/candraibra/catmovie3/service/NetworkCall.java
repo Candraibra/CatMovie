@@ -16,9 +16,9 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.candraibra.catmovie3.BuildConfig;
 import com.candraibra.catmovie3.data.network.movie.MovieResponse;
-import com.candraibra.catmovie3.data.network.movie.MovieResults;
+import com.candraibra.catmovie3.data.entity.movie.MovieResults;
 import com.candraibra.catmovie3.data.network.tv.TvResponse;
-import com.candraibra.catmovie3.data.network.tv.TvResults;
+import com.candraibra.catmovie3.data.entity.tv.TvResults;
 import com.candraibra.catmovie3.utils.EspressoIdlingResource;
 
 import org.jetbrains.annotations.NotNull;

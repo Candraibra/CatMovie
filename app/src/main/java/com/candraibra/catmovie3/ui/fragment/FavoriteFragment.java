@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 11/29/19 6:21 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/24/19 5:54 PM
+ *  * Last modified 11/28/19 1:29 PM
  *
  */
 
@@ -34,7 +34,7 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MovieFragment extends Fragment {
+public class FavoriteFragment extends Fragment {
     @BindView(R.id.rv_movie)
     public RecyclerView recyclerView;
     @BindView(R.id.shimmerLayout)

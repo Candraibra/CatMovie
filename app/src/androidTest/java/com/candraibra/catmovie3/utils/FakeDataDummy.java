@@ -8,8 +8,8 @@
 
 package com.candraibra.catmovie3.utils;
 
-import com.candraibra.catmovie3.data.network.movie.MovieResults;
-import com.candraibra.catmovie3.data.network.tv.TvResults;
+import com.candraibra.catmovie3.data.entity.movie.MovieResults;
+import com.candraibra.catmovie3.data.entity.tv.TvResults;
 
 import java.util.ArrayList;
 

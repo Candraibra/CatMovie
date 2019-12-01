@@ -9,9 +9,9 @@
 package com.candraibra.catmovie3.service;
 
 import com.candraibra.catmovie3.data.network.movie.MovieResponse;
-import com.candraibra.catmovie3.data.network.movie.MovieResults;
+import com.candraibra.catmovie3.data.entity.movie.MovieResults;
 import com.candraibra.catmovie3.data.network.tv.TvResponse;
-import com.candraibra.catmovie3.data.network.tv.TvResults;
+import com.candraibra.catmovie3.data.entity.tv.TvResults;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
