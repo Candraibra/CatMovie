@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:13 AM
+ *  * Created by Candra Ibra Sanie on 12/1/19 10:31 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/19/19 7:34 AM
+ *  * Last modified 12/1/19 10:23 PM
  *
  */
 
@@ -25,7 +25,6 @@ public class FakeDataDummy {
                 "Joker",
                 false,
                 "Joker",
-                null,
                 "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
                 "/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg",
                 "2019-10-02",
@@ -45,9 +44,7 @@ public class FakeDataDummy {
                 "2013-12-02",
                 "Rick is a mentally-unbalanced but scientifically-gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty's already unstable family life, these events cause Morty much distress at home and school.",
                 "en",
-                null,
                 "/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg",
-                null,
                 "/mzzHr6g1yvZ05Mc7hNj3tUdy2bM.jpg",
                 "Rick and Morty",
                 626.673,
@@ -70,7 +67,6 @@ public class FakeDataDummy {
                 "Joker",
                 false,
                 "Joker",
-                null,
                 "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
                 "/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg",
                 "2019-10-02",

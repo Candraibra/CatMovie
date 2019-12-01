@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/1/19 10:31 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/24/19 6:33 PM
+ *  * Last modified 12/1/19 10:26 PM
  *
  */
 
@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.candraibra.catmovie3.R;
 import com.candraibra.catmovie3.adapter.TvAdapter;
 import com.candraibra.catmovie3.ui.activity.DetailTvActivity;
+import com.candraibra.catmovie3.utils.EspressoIdlingResource;
 import com.candraibra.catmovie3.utils.ItemClickSupport;
 import com.candraibra.catmovie3.viewmodel.TvViewModel;
 import com.candraibra.catmovie3.viewmodel.ViewModelFactory;
@@ -55,6 +56,7 @@ public class TvFragment extends Fragment {
         if (getActivity() != null) {
             ViewModelFactory factory = ViewModelFactory.getInstance(getActivity().getApplication());
             TvViewModel viewModel = ViewModelProviders.of(this, factory).get(TvViewModel.class);
+            EspressoIdlingResource.increment();
             viewModel.mLiveTvData().observe(this, results -> {
                 if (results != null) {
                     TvAdapter tvAdapter = new TvAdapter(getActivity(), results);
@@ -69,6 +71,7 @@ public class TvFragment extends Fragment {
                     recyclerView.setHasFixedSize(true);
                     recyclerView.setAdapter(tvAdapter);
                     tvAdapter.notifyDataSetChanged();
+                    EspressoIdlingResource.increment();
                 }
             });
         }

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/1/19 10:31 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/24/19 5:54 PM
+ *  * Last modified 12/1/19 10:25 PM
  *
  */
 
@@ -25,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.candraibra.catmovie3.R;
 import com.candraibra.catmovie3.adapter.MovieAdapter;
 import com.candraibra.catmovie3.ui.activity.DetailMovieActivity;
+import com.candraibra.catmovie3.utils.EspressoIdlingResource;
 import com.candraibra.catmovie3.utils.ItemClickSupport;
 import com.candraibra.catmovie3.viewmodel.MovieViewModel;
 import com.candraibra.catmovie3.viewmodel.ViewModelFactory;
@@ -66,6 +67,7 @@ public class MovieFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         if (getActivity() != null) {
             viewModel = obtainViewModel(getActivity());
+            EspressoIdlingResource.increment();
             viewModel.mLiveMovieData().observe(this, results -> {
                 if (results != null) {
                     MovieAdapter movieAdapter = new MovieAdapter(getActivity(), results);
@@ -80,6 +82,7 @@ public class MovieFragment extends Fragment {
                     recyclerView.setHasFixedSize(true);
                     recyclerView.setAdapter(movieAdapter);
                     movieAdapter.notifyDataSetChanged();
+                    EspressoIdlingResource.decrement();
                 }
             });
 

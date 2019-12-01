@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><!--
   ~ /**
-  ~  * Created by Candra Ibra Sanie on 12/1/19 10:18 PM
+  ~  * Created by Candra Ibra Sanie on 12/1/19 10:31 PM
   ~  * Copyright (c) 2019 . All rights reserved.
-  ~  * Last modified 12/1/19 10:05 PM
+  ~  * Last modified 12/1/19 10:30 PM
   ~  */
   -->
 
@@ -42,7 +42,7 @@
             android:id="@+id/tv_title"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/avenir_medium"
+            android:fontFamily="@font/avenir_regular"
             android:gravity="center"
             android:maxLines="1"
             android:paddingStart="10dp"

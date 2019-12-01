@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:13 AM
+ *  * Created by Candra Ibra Sanie on 12/1/19 10:31 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/19/19 7:33 AM
+ *  * Last modified 12/1/19 10:26 PM
  *
  */
 
@@ -14,6 +14,8 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.espresso.ViewAssertion;
+
+import java.util.Objects;
 
 import static androidx.test.espresso.matcher.ViewMatchers.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -31,11 +33,8 @@ public class RecyclerViewItemCountAssertion implements ViewAssertion {
         if (noViewFoundException != null) {
             throw noViewFoundException;
         }
-
         RecyclerView recyclerView = (RecyclerView) view;
         RecyclerView.Adapter adapter = recyclerView.getAdapter();
-        if (adapter != null) {
-            assertThat(adapter.getItemCount(), is(expectedCount));
-        }
+        assertThat(Objects.requireNonNull(adapter).getItemCount(), is(expectedCount));
     }
 }
