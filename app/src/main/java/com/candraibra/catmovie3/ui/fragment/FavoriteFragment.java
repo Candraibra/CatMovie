@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/29/19 6:21 PM
+ *  * Created by Candra Ibra Sanie on 12/1/19 8:59 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/28/19 1:29 PM
+ *  * Last modified 12/1/19 8:33 PM
  *
  */
 
@@ -40,8 +40,6 @@ public class FavoriteFragment extends Fragment {
     @BindView(R.id.shimmerLayout)
     public ShimmerFrameLayout shimmer;
 
-    private MovieViewModel viewModel;
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -66,7 +64,7 @@ public class FavoriteFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if (getActivity() != null) {
-            viewModel = obtainViewModel(getActivity());
+            MovieViewModel viewModel = obtainViewModel(getActivity());
             viewModel.mLiveMovieData().observe(this, results -> {
                 MovieAdapter movieAdapter = new MovieAdapter(getActivity(), results);
                 shimmer.stopShimmer();

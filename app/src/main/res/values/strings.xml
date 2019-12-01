@@ -1,13 +1,23 @@
+<!--
+  ~ /**
+  ~  * Created by Candra Ibra Sanie on 12/1/19 8:59 PM
+  ~  * Copyright (c) 2019 . All rights reserved.
+  ~  * Last modified 12/1/19 8:59 PM
+  ~  */
+  -->
+
 <resources>
     <string name="app_name">CatMovie3</string>
     <string name="movies">Movies</string>
-    <string name="tv">Tv</string>
+    <string name="tv">Tv Shows</string>
     <string name="cat">Cat</string>
     <string name="movie">Movie</string>
-    <string name="lorem">lorem ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum</string>
+    <string name="lorem">lorem is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="popular_in_catmovie">Popular in CatMovie</string>
     <string name="desc">Description</string>
     <string name="title">Title</string>
     <string name="favorite">Favorite</string>
+    <string name="your_favorite_movies">Your Favorite Movies</string>
+    <string name="your_favorite_tvs">Your Favorite Tvs</string>
 
 </resources>
