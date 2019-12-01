@@ -1,14 +1,15 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/1/19 4:47 PM
+ *  * Created by Candra Ibra Sanie on 12/1/19 10:03 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 4:33 PM
+ *  * Last modified 12/1/19 9:02 PM
  *
  */
 
 package com.candraibra.catmovie3.database.dao;
 
 import androidx.lifecycle.LiveData;
+import androidx.paging.DataSource;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -16,8 +17,6 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.candraibra.catmovie3.data.entity.movie.MovieResults;
-
-import java.util.List;
 
 @Dao
 public interface MovieDao {
@@ -31,5 +30,5 @@ public interface MovieDao {
     LiveData<MovieResults> getMovieById(int id);
 
     @Query("SELECT * from movieTable ORDER BY title ASC")
-    LiveData<List<MovieResults>> getAllMovie();
+    DataSource.Factory<Integer, MovieResults> getAllmovie();
 }

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/1/19 10:03 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/18/19 4:20 PM
+ *  * Last modified 12/1/19 9:38 PM
  *
  */
 
@@ -50,6 +50,9 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         } else if (modelClass.isAssignableFrom(DetailViewModel.class)) {
             //noinspection unchecked
             return (T) new DetailViewModel(repository);
+        } else if (modelClass.isAssignableFrom(FavoriteViewModel.class)) {
+            //noinspection unchecked
+            return (T) new FavoriteViewModel(repository);
         }
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }

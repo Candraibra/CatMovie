@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/1/19 10:03 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/24/19 5:41 PM
+ *  * Last modified 12/1/19 9:08 PM
  *
  */
 
@@ -12,6 +12,7 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.paging.DataSource;
 
 import com.candraibra.catmovie3.data.entity.movie.MovieResults;
 import com.candraibra.catmovie3.data.entity.tv.TvResults;
@@ -69,8 +70,12 @@ public class Repository {
         return networkCall.getTvById(id);
     }
 
-    public LiveData<List<MovieResults>> getAllMovie() {
-        return movieDao.getAllMovie();
+    public DataSource.Factory<Integer, MovieResults> getAllMovie() {
+        return movieDao.getAllmovie();
+    }
+
+    public DataSource.Factory<Integer, TvResults> getALlTv() {
+        return tvDao.getAllTv();
     }
 
     public LiveData<MovieResults> getMovieByIdRoom(int id) {
@@ -81,9 +86,6 @@ public class Repository {
         return tvDao.getTvById(id);
     }
 
-    public LiveData<List<TvResults>> getAllTv() {
-        return tvDao.getAllTv();
-    }
 
     public void insertMovie(final MovieResults movieResults) {
         executorService.execute(() -> movieDao.insert(movieResults));
