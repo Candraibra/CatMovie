@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:13 AM
+ *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/19/19 7:33 AM
+ *  * Last modified 12/2/19 7:41 AM
  *
  */
 
@@ -30,6 +30,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.candraibra.catmovie2.debug", appContext.getPackageName());
+        assertEquals("com.candraibra.catmovie3.debug", appContext.getPackageName());
     }
 }

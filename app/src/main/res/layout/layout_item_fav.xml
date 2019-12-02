@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><!--
   ~ /**
-  ~  * Created by Candra Ibra Sanie on 12/1/19 10:31 PM
+  ~  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
   ~  * Copyright (c) 2019 . All rights reserved.
-  ~  * Last modified 12/1/19 10:30 PM
+  ~  * Last modified 12/2/19 7:43 AM
   ~  */
   -->
 
@@ -17,7 +17,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
 
         <androidx.cardview.widget.CardView

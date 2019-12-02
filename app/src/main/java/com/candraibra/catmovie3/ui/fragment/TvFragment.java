@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/1/19 10:31 PM
+ *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 10:26 PM
+ *  * Last modified 12/2/19 7:09 AM
  *
  */
 
@@ -71,7 +71,7 @@ public class TvFragment extends Fragment {
                     recyclerView.setHasFixedSize(true);
                     recyclerView.setAdapter(tvAdapter);
                     tvAdapter.notifyDataSetChanged();
-                    EspressoIdlingResource.increment();
+                    EspressoIdlingResource.decrement();
                 }
             });
         }

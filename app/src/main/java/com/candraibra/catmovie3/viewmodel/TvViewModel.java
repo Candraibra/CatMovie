@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/18/19 11:01 AM
+ *  * Last modified 12/1/19 10:59 PM
  *
  */
 
@@ -21,7 +21,7 @@ import java.util.List;
 
 public class TvViewModel extends ViewModel {
     private Repository repository;
-    private MutableLiveData<List<TvResults>> tvResults = new MutableLiveData<>();
+    protected MutableLiveData<List<TvResults>> tvResults = new MutableLiveData<>();
 
 
     TvViewModel(Repository repository) {

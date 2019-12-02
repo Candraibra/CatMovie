@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/18/19 10:57 AM
+ *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/18/19 10:32 AM
+ *  * Last modified 12/1/19 11:24 PM
  *
  */
 
@@ -23,9 +23,10 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 public class MovieViewModelTest {
 
@@ -36,7 +37,7 @@ public class MovieViewModelTest {
 
     @Before
     public void setUp() {
-        viewModel = new MovieViewModel(repository);
+        viewModel = spy(new MovieViewModel(repository));
     }
 
     @Test
@@ -46,13 +47,14 @@ public class MovieViewModelTest {
         MutableLiveData<List<MovieResults>> movies = new MutableLiveData<>();
         movies.setValue(dummyMovies);
 
-        when(repository.mLiveMovieData()).thenReturn(movies);
-
         Observer<List<MovieResults>> observer = mock(Observer.class);
+        viewModel.movieResults = movies;
 
-        viewModel.mLiveMovieData().observeForever(observer);
+        viewModel.movieResults.observeForever(observer);
+        assertEquals(viewModel.movieResults, viewModel.mLiveMovieData());
 
         verify(observer).onChanged(dummyMovies);
+
     }
 
 }

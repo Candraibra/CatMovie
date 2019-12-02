@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/1/19 10:03 PM
+ *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 9:26 PM
+ *  * Last modified 12/1/19 11:42 PM
  *
  */
 
@@ -38,7 +38,7 @@ public class FavoriteViewModel extends ViewModel {
     }
 
     public LiveData<PagedList<TvResults>> getAllTv() {
-        return new LivePagedListBuilder<>(repository.getALlTv(), 10).build();
+        return new LivePagedListBuilder<>(repository.getAllTv(), 10).build();
     }
 
 }

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/1/19 8:59 PM
+ *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 8:33 PM
+ *  * Last modified 12/1/19 11:10 PM
  *
  */
 
@@ -22,7 +22,7 @@ import java.util.List;
 
 public class MovieViewModel extends ViewModel {
     private Repository repository;
-    private MutableLiveData<List<MovieResults>> movieResults = new MutableLiveData<>();
+    protected MutableLiveData<List<MovieResults>> movieResults = new MutableLiveData<>();
 
     MovieViewModel(@NonNull Repository repository) {
         this.repository = repository;

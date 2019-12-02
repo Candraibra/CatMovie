@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:13 AM
+ *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/19/19 7:33 AM
+ *  * Last modified 12/2/19 7:39 AM
  *
  */
 
@@ -26,6 +26,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -63,5 +64,6 @@ public class DetailTvActivityTest {
         onView(withId(R.id.tv_desc)).check(matches(isDisplayed()));
         onView(withId(R.id.tv_desc)).check(matches(withText(dummyTv.getOverview())));
         onView(withId(R.id.img_poster)).check(matches(isDisplayed()));
+        onView(withId(R.id.btn_fav)).perform(click());
     }
 }

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/1/19 10:03 PM
+ *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 9:55 PM
+ *  * Last modified 12/2/19 7:23 AM
  *
  */
 
@@ -25,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.candraibra.catmovie3.R;
 import com.candraibra.catmovie3.adapter.MoviePagedListAdapter;
 import com.candraibra.catmovie3.adapter.TvPagedListAdapter;
+import com.candraibra.catmovie3.utils.EspressoIdlingResource;
 import com.candraibra.catmovie3.viewmodel.FavoriteViewModel;
 import com.candraibra.catmovie3.viewmodel.ViewModelFactory;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -42,7 +43,7 @@ public class FavoriteFragment extends Fragment {
     @BindView(R.id.rv_tv)
     public RecyclerView rvTv;
 
-    private MoviePagedListAdapter movieAapter;
+    private MoviePagedListAdapter movieAdapter;
     private TvPagedListAdapter tvAdapter;
 
 
@@ -70,20 +71,23 @@ public class FavoriteFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         if (getActivity() != null) {
             FavoriteViewModel viewModel = obtainViewModel(getActivity());
-            movieAapter = new MoviePagedListAdapter(getActivity());
+            movieAdapter = new MoviePagedListAdapter(getActivity());
             tvAdapter = new TvPagedListAdapter(getActivity());
+            EspressoIdlingResource.increment();
             viewModel.getAllMovie().observe(this, results -> {
                 if (results != null) {
                     shimmerFrameLayout.stopShimmer();
                     shimmerFrameLayout.setVisibility(View.GONE);
-                    movieAapter.submitList(results);
+                    movieAdapter.submitList(results);
                     rvMovie.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
                     rvMovie.setHasFixedSize(true);
-                    rvMovie.setAdapter(movieAapter);
+                    rvMovie.setAdapter(movieAdapter);
+
                 } else {
                     Toast.makeText(getActivity(), "List Movie Null", Toast.LENGTH_SHORT).show();
                 }
             });
+
             viewModel.getAllTv().observe(this, results -> {
                 if (results != null) {
                     shimmerFrameLayout2.stopShimmer();
@@ -92,11 +96,11 @@ public class FavoriteFragment extends Fragment {
                     rvTv.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
                     rvTv.setHasFixedSize(true);
                     rvTv.setAdapter(tvAdapter);
-
                 } else {
                     Toast.makeText(getActivity(), "List Tv Null", Toast.LENGTH_SHORT).show();
                 }
             });
+            EspressoIdlingResource.decrement();
 
         }
     }
