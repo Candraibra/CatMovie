@@ -1,5 +1,5 @@
-![Home](preview.png)
-![Home](jetpack.png)
+![Jetpack](jetpack.png)
+![Preview](preview.png)
 
 Android Jetpack
 Pada I/O 2018, Google resmi mempublikasikan Android Jetpack. Android Jetpack sendiri adalah kumpulan library, tools, architecture guidance yang dapat membantu proses pengembangan aplikasi android dengan lebih mudah dan cepat. 
@@ -42,4 +42,11 @@ Syarat:
 Menerapkan instrumentation test untuk memastikan fitur-fitur yang ada berjalan dengan semestinya.
 Jika pada aplikasi terdapat proses asynchronous, maka Anda wajib menerapkan Idle Resources.
 Tuliskan skenario instrumentation test pada kolom Catatan ketika Anda ingin mengumpulkan tugas ini. Untuk format penulisan sekenario pengujian, Anda bisa melihat contoh di modul Proyek Academy : Pengujian ViewModel.
+
+untuk aplikasi ini sendiri saya menggunakan beberapa library seperti :
+-  [ButterKnife](https://jakewharton.github.io/butterknife/ "ButterKnife")
+- [ArcLayout](https://github.com/florent37/ArcLayout "ArcLayout")
+- [Shimmer](https://github.com/facebook/shimmer-android "Shimmer")
+- [Retrofit](https://square.github.io/retrofit/ "Retrofit")
+- [Glide](https://github.com/bumptech/glide "Glide")
 
