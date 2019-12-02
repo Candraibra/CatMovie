@@ -1,12 +1,12 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/1/19 10:03 PM
+ *  * Created by Candra Ibra Sanie on 12/2/19 8:32 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 10:02 PM
+ *  * Last modified 12/2/19 8:31 AM
  *
  */
 
-package com.candraibra.catmovie3.adapter;
+package com.candraibra.catmovie3.ui.adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

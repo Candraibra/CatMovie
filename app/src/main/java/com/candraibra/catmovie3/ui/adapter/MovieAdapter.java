@@ -1,12 +1,12 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/2/19 8:32 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/19/19 2:25 PM
+ *  * Last modified 12/2/19 8:31 AM
  *
  */
 
-package com.candraibra.catmovie3.adapter;
+package com.candraibra.catmovie3.ui.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;

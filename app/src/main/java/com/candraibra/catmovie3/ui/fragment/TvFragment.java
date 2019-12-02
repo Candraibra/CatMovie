@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
+ *  * Created by Candra Ibra Sanie on 12/2/19 8:32 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/2/19 7:09 AM
+ *  * Last modified 12/2/19 8:32 AM
  *
  */
 
@@ -22,8 +22,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.candraibra.catmovie3.R;
-import com.candraibra.catmovie3.adapter.TvAdapter;
 import com.candraibra.catmovie3.ui.activity.DetailTvActivity;
+import com.candraibra.catmovie3.ui.adapter.TvAdapter;
 import com.candraibra.catmovie3.utils.EspressoIdlingResource;
 import com.candraibra.catmovie3.utils.ItemClickSupport;
 import com.candraibra.catmovie3.viewmodel.TvViewModel;
