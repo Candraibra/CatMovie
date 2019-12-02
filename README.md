@@ -1,6 +1,8 @@
 ![Jetpack](jetpack.png)
 ![Preview](preview.jpg)
 
+> ###  ***Read Smarter not Harded***
+
 Android Jetpack
 Pada I/O 2018, Google resmi mempublikasikan Android Jetpack. Android Jetpack sendiri adalah kumpulan library, tools, architecture guidance yang dapat membantu proses pengembangan aplikasi android dengan lebih mudah dan cepat. 
 
@@ -45,7 +47,6 @@ Menerapkan unit test pada semua fungsi yang digunakan untuk mendapatkan data Mov
 
 #### **Instrumentation Tests**
 Syarat:
-
 Menerapkan instrumentation test untuk memastikan fitur-fitur yang ada berjalan dengan semestinya.
 Jika pada aplikasi terdapat proses asynchronous, maka Anda wajib menerapkan Idle Resources.
 Tuliskan skenario instrumentation test pada kolom Catatan ketika Anda ingin mengumpulkan tugas ini. Untuk format penulisan sekenario pengujian, Anda bisa melihat contoh di modul Proyek Academy : Pengujian ViewModel.
