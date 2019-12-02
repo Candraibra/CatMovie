@@ -1,5 +1,5 @@
 ![Jetpack](jetpack.png)
-![Preview](preview.png)
+![Preview](preview.jpg)
 
 Android Jetpack
 Pada I/O 2018, Google resmi mempublikasikan Android Jetpack. Android Jetpack sendiri adalah kumpulan library, tools, architecture guidance yang dapat membantu proses pengembangan aplikasi android dengan lebih mudah dan cepat. 
