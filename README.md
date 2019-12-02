@@ -17,9 +17,8 @@ Untuk Aplikasi Ini Sendiri Saya Menggunakan Beberapa Library ke-3 Seperti :
 - [Glide](https://github.com/bumptech/glide "Glide")
 
 Pada kali ini saya mengikuti course Belajar Android Jetpack Pro dari dicoding,
-pertama saya mempelajara fundamental jetpack itu sendiri kemudian disusul dengan MVVM, AndroidX, LiveData, Pagination, Testing dan Room
+Pertama saya mempelajari fundamental jetpack itu sendiri kemudian disusul dengan MVVM(LiveData dan ViewModel), AndroidX,Repository,  Pagination, Testing(Unit Test, UI Test, Idling Resource) dan Room
 
-untuk submissin terakhir ini saya diharuskan
 
 ## **Kriteria**
 Fitur yang harus ada pada aplikasi:
@@ -49,7 +48,6 @@ Menerapkan unit test pada semua fungsi yang digunakan untuk mendapatkan data Mov
 Syarat:
 Menerapkan instrumentation test untuk memastikan fitur-fitur yang ada berjalan dengan semestinya.
 Jika pada aplikasi terdapat proses asynchronous, maka Anda wajib menerapkan Idle Resources.
-Tuliskan skenario instrumentation test pada kolom Catatan ketika Anda ingin mengumpulkan tugas ini. Untuk format penulisan sekenario pengujian, Anda bisa melihat contoh di modul Proyek Academy : Pengujian ViewModel.
 
 
 
