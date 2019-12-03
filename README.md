@@ -28,16 +28,19 @@ Fitur yang harus ada pada aplikasi:
 
 #### **Daftar film**
 Syarat:
+
 Terdapat 2 (dua) halaman yang menampilkan daftar film (Movies dan Tv Show) dengan jumlah minimal 10 item.
 Menerapkan ViewModel, LiveData dan Repository.
 
 #### Detail tv
 Syarat:
+
 Menampilkan poster dan informasi film pada halaman detail film.
 Menerapkan ViewModel, LiveData dan Repository.
 
 #### **Favorite Film**
 Syarat:
+
 Dapat menyimpan film ke database favorite.
 Dapat menghapus film dari database favorite.
 Terdapat halaman untuk menampilkan daftar Favorite Movies.
@@ -47,10 +50,12 @@ Menerapkan Pagination untuk mengatur data pada RecyclerView.
 
 #### **Unit Test**
 Syarat:
+
 Menerapkan unit test pada semua fungsi yang digunakan untuk mendapatkan data Movie dan Tv Show dari API atau Lokal.
 
 #### **Instrumentation Tests**
 Syarat:
+
 Menerapkan instrumentation test untuk memastikan fitur-fitur yang ada berjalan dengan semestinya.
 Jika pada aplikasi terdapat proses asynchronous, maka Anda wajib menerapkan Idle Resources.
 
