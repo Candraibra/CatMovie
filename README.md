@@ -15,6 +15,7 @@ Untuk Aplikasi Ini Sendiri Saya Menggunakan Beberapa Library ke-3 Seperti :
 - [Shimmer](https://github.com/facebook/shimmer-android "Shimmer")
 - [Retrofit](https://square.github.io/retrofit/ "Retrofit")
 - [Glide](https://github.com/bumptech/glide "Glide")
+
 Data Source :
 - [TMDB](https://www.themoviedb.org/ "TMDB")
 
