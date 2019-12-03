@@ -15,6 +15,8 @@ Untuk Aplikasi Ini Sendiri Saya Menggunakan Beberapa Library ke-3 Seperti :
 - [Shimmer](https://github.com/facebook/shimmer-android "Shimmer")
 - [Retrofit](https://square.github.io/retrofit/ "Retrofit")
 - [Glide](https://github.com/bumptech/glide "Glide")
+Data Source :
+- [TMDB](https://www.themoviedb.org/ "TMDB")
 
 Pada kali ini saya mengikuti course Belajar Android Jetpack Pro dari dicoding,
 Pertama saya mempelajari fundamental jetpack itu sendiri kemudian disusul dengan MVVM(LiveData dan ViewModel), AndroidX,Repository,  Pagination, Testing(Unit Test, UI Test, Idling Resource) dan Room
@@ -25,11 +27,13 @@ Fitur yang harus ada pada aplikasi:
 
 #### **Daftar film**
 Syarat:
-Mempertahankan fitur sebelumnya.
+Terdapat 2 (dua) halaman yang menampilkan daftar film (Movies dan Tv Show) dengan jumlah minimal 10 item.
+Menerapkan ViewModel, LiveData dan Repository.
 
 #### Detail tv
 Syarat:
-Mempertahankan fitur sebelumnya.
+Menampilkan poster dan informasi film pada halaman detail film.
+Menerapkan ViewModel, LiveData dan Repository.
 
 #### **Favorite Film**
 Syarat:
