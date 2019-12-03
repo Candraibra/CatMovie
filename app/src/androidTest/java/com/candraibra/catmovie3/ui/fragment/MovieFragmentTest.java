@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
+ *  * Created by Candra Ibra Sanie on 12/3/19 12:28 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/2/19 7:42 AM
+ *  * Last modified 12/3/19 11:45 AM
  *
  */
 
@@ -50,9 +50,6 @@ public class MovieFragmentTest {
         onView(withId(R.id.rv_movie)).check(matches(isDisplayed()));
         onView(withId(R.id.rv_movie)).check(new RecyclerViewItemCountAssertion(20));
         onView(withId(R.id.rv_movie)).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
-        onView(withId(R.id.btn_fav)).perform(click());
-        onView(withId(R.id.backButton)).perform(click());
-        onView(withId(R.id.rv_movie)).perform(RecyclerViewActions.actionOnItemAtPosition(1, click()));
         onView(withId(R.id.btn_fav)).perform(click());
 
     }

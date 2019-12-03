@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
+ *  * Created by Candra Ibra Sanie on 12/3/19 12:28 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/2/19 7:40 AM
+ *  * Last modified 12/3/19 11:45 AM
  *
  */
 
@@ -50,9 +50,6 @@ public class TvFragmentTest {
         onView(withId(R.id.rv_tv)).check(matches(isDisplayed()));
         onView(withId(R.id.rv_tv)).check(new RecyclerViewItemCountAssertion(20));
         onView(withId(R.id.rv_tv)).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
-        onView(withId(R.id.btn_fav)).perform(click());
-        onView(withId(R.id.backButton)).perform(click());
-        onView(withId(R.id.rv_tv)).perform(RecyclerViewActions.actionOnItemAtPosition(2, click()));
         onView(withId(R.id.btn_fav)).perform(click());
     }
 }
