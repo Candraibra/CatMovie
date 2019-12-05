@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
+ *  * Created by Candra Ibra Sanie on 12/5/19 7:29 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 11:10 PM
+ *  * Last modified 12/5/19 7:10 AM
  *
  */
 
@@ -21,8 +21,9 @@ import com.candraibra.catmovie3.data.entity.movie.MovieResults;
 import java.util.List;
 
 public class MovieViewModel extends ViewModel {
-    private Repository repository;
     protected MutableLiveData<List<MovieResults>> movieResults = new MutableLiveData<>();
+    protected MutableLiveData<List<MovieResults>> movieResults2 = new MutableLiveData<>();
+    private Repository repository;
 
     MovieViewModel(@NonNull Repository repository) {
         this.repository = repository;
@@ -39,5 +40,12 @@ public class MovieViewModel extends ViewModel {
             repository.mLiveMovieData(movieResults);
         }
         return movieResults;
+    }
+
+    public LiveData<List<MovieResults>> mLiveUpcomingMovie() {
+        if (movieResults2.getValue() == null) {
+            repository.mLiveMovieDataUpcoming(movieResults2);
+        }
+        return movieResults2;
     }
 }

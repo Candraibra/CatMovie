@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 8:32 AM
+ *  * Created by Candra Ibra Sanie on 12/5/19 7:29 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/2/19 8:32 AM
+ *  * Last modified 12/5/19 7:24 AM
  *
  */
 
@@ -20,11 +20,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.candraibra.catmovie3.R;
 import com.candraibra.catmovie3.ui.activity.DetailMovieActivity;
 import com.candraibra.catmovie3.ui.adapter.MovieAdapter;
+import com.candraibra.catmovie3.ui.adapter.MovieAdapterCourusel;
 import com.candraibra.catmovie3.utils.EspressoIdlingResource;
 import com.candraibra.catmovie3.utils.ItemClickSupport;
 import com.candraibra.catmovie3.viewmodel.MovieViewModel;
@@ -35,10 +37,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MovieFragment extends Fragment {
-    @BindView(R.id.rv_movie)
+    @BindView(R.id.rv_upcoming)
     public RecyclerView recyclerView;
+    @BindView(R.id.rv_popular)
+    public RecyclerView courusel;
     @BindView(R.id.shimmerLayout)
     public ShimmerFrameLayout shimmer;
+
+    @BindView(R.id.shimmerLayoutTop)
+    public ShimmerFrameLayout shimmer2;
 
     private MovieViewModel viewModel;
 
@@ -46,7 +53,7 @@ public class MovieFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_movie, container, false);
+        return inflater.inflate(R.layout.fragment_movie2, container, false);
     }
 
     @NonNull
@@ -82,6 +89,24 @@ public class MovieFragment extends Fragment {
                     recyclerView.setHasFixedSize(true);
                     recyclerView.setAdapter(movieAdapter);
                     movieAdapter.notifyDataSetChanged();
+                    EspressoIdlingResource.decrement();
+                }
+            });
+            EspressoIdlingResource.increment();
+            viewModel.mLiveUpcomingMovie().observe(this, results -> {
+                if (results != null) {
+                    MovieAdapterCourusel movieAdapterCourusel = new MovieAdapterCourusel(getActivity(), results);
+                    shimmer2.stopShimmer();
+                    shimmer2.setVisibility(View.GONE);
+                    ItemClickSupport.addTo(courusel).setOnItemClickListener((recyclerView, position, v) -> {
+                        Intent intent = new Intent(getActivity(), DetailMovieActivity.class);
+                        intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, results.get(position));
+                        startActivity(intent);
+                    });
+                    courusel.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+                    courusel.setHasFixedSize(true);
+                    courusel.setAdapter(movieAdapterCourusel);
+                    movieAdapterCourusel.notifyDataSetChanged();
                     EspressoIdlingResource.decrement();
                 }
             });

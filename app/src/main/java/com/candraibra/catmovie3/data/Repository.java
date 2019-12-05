@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
+ *  * Created by Candra Ibra Sanie on 12/5/19 7:29 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 11:42 PM
+ *  * Last modified 12/5/19 7:10 AM
  *
  */
 
@@ -53,6 +53,11 @@ public class Repository {
     // Methods for MovieFragment
     public void mLiveMovieData(MutableLiveData<List<MovieResults>> liveData) {
         networkCall.getPopularMovie(liveData);
+    }
+
+    // Methods for MovieFragment
+    public void mLiveMovieDataUpcoming(MutableLiveData<List<MovieResults>> liveData) {
+        networkCall.getUpcomingMovie(liveData);
     }
 
     // Methods for TvFragment

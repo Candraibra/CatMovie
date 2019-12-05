@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/5/19 7:29 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/24/19 5:41 PM
+ *  * Last modified 12/5/19 7:10 AM
  *
  */
 
@@ -66,14 +66,6 @@ public class NetworkCall {
         });
         EspressoIdlingResource.decrement();
     }
-
-//    public static LiveData<List<MovieResults>> getDataMovie() {
-//        return movieData;
-//    }
-//
-//    public static LiveData<List<TvResults>> getDataTv() {
-//        return tvData;
-//    }
 
     public void getPopularMovie(MutableLiveData<List<MovieResults>> liveData) {
         EspressoIdlingResource.increment();
@@ -150,6 +142,30 @@ public class NetworkCall {
         });
         EspressoIdlingResource.decrement();
         return tvDataById;
+    }
+
+    public void getUpcomingMovie(MutableLiveData<List<MovieResults>> liveData) {
+        EspressoIdlingResource.increment();
+        Call<MovieResponse> call = apiClient.getMovieUpcoming(BuildConfig.ApiKey, LANGUAGE, 1);
+        call.enqueue(new Callback<MovieResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<MovieResponse> call, @NotNull Response<MovieResponse> response) {
+                if (response.isSuccessful()) {
+                    MovieResponse moviesResponse = response.body();
+                    if (moviesResponse != null && moviesResponse.getResults() != null) {
+                        liveData.postValue(moviesResponse.getResults());
+                    } else {
+                        Log.d("NetworkCall", "Empty Data");
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<MovieResponse> call, @NotNull Throwable t) {
+                Log.d("NetworkCall", "Failed Fetch getPopularMovie()/Failure");
+            }
+        });
+        EspressoIdlingResource.decrement();
     }
 
 }
