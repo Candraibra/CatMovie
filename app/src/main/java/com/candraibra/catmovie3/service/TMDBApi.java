@@ -1,17 +1,17 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/5/19 7:02 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/14/19 9:05 PM
+ *  * Last modified 12/5/19 7:01 AM
  *
  */
 
 package com.candraibra.catmovie3.service;
 
-import com.candraibra.catmovie3.data.network.movie.MovieResponse;
 import com.candraibra.catmovie3.data.entity.movie.MovieResults;
-import com.candraibra.catmovie3.data.network.tv.TvResponse;
 import com.candraibra.catmovie3.data.entity.tv.TvResults;
+import com.candraibra.catmovie3.data.network.movie.MovieResponse;
+import com.candraibra.catmovie3.data.network.tv.TvResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -20,6 +20,7 @@ import retrofit2.http.Query;
 
 public interface TMDBApi {
 
+    //region MOVIE
     // query for movies
     @GET("movie/popular")
     Call<MovieResponse> getMoviePopular(
@@ -27,9 +28,9 @@ public interface TMDBApi {
             @Query("language") String language,
             @Query("page") int page);
 
-    // query for tvs
-    @GET("tv/popular")
-    Call<TvResponse> getTvPopular(
+    // query for movies upcoming
+    @GET("movie/upcoming")
+    Call<MovieResponse> getMovieUpcoming(
             @Query("api_key") String apiKey,
             @Query("language") String language,
             @Query("page") int page);
@@ -41,6 +42,15 @@ public interface TMDBApi {
             @Query("api_key") String apiKey,
             @Query("language") String language
     );
+    //endregion
+
+    //region TV
+    // query for tvs
+    @GET("tv/popular")
+    Call<TvResponse> getTvPopular(
+            @Query("api_key") String apiKey,
+            @Query("language") String language,
+            @Query("page") int page);
 
     //get_tv_by_id
     @GET("tv/{tv_id}")
@@ -49,5 +59,5 @@ public interface TMDBApi {
             @Query("api_key") String apiKey,
             @Query("language") String language
     );
-
+    //endregion
 }

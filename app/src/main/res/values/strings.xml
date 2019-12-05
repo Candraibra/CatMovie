@@ -1,8 +1,8 @@
 <!--
   ~ /**
-  ~  * Created by Candra Ibra Sanie on 12/1/19 8:59 PM
+  ~  * Created by Candra Ibra Sanie on 12/5/19 7:02 AM
   ~  * Copyright (c) 2019 . All rights reserved.
-  ~  * Last modified 12/1/19 8:59 PM
+  ~  * Last modified 12/4/19 4:53 PM
   ~  */
   -->
 
@@ -19,5 +19,6 @@
     <string name="favorite">Favorite</string>
     <string name="your_favorite_movies">Your Favorite Movies</string>
     <string name="your_favorite_tvs">Your Favorite Tvs</string>
+    <string name="upcoming">Upcoming</string>
 
 </resources>
