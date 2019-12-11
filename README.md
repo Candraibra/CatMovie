@@ -7,7 +7,7 @@ Android Jetpack
 Pada I/O 2018, Google resmi mempublikasikan Android Jetpack. Android Jetpack sendiri adalah kumpulan library, tools, architecture guidance yang dapat membantu proses pengembangan aplikasi android dengan lebih mudah dan cepat. 
 
 Jetpack terdiri dari beberapa paket library androidx.*, yang tidak terpaket dengan API platform. Jetpack menawarkan kompatibilitas dengan versi sebelumnya dan lebih sering diperbarui dibandingkan platform Android. Alhasil, Anda selalu dapat mengakses versi komponen Jetpack yang terbaru dan terbaik.
-sumber [dicoding.com](https://www.dicoding.com/academies/129/ "dicoding.com")
+sumber [dicoding.com](https://www.dicoding.com/academies/129/ "Belajar Android Jetpack Pro")
 
 Untuk Aplikasi Ini Sendiri Saya Menggunakan Beberapa Library ke-3 Seperti :
 - [ButterKnife](https://jakewharton.github.io/butterknife/ "ButterKnife")
