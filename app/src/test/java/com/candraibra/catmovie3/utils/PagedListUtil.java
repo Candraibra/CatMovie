@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
+ *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/2/19 12:07 AM
+ *  * Last modified 12/26/19 7:37 PM
  *
  */
 
@@ -19,6 +19,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 
+@SuppressWarnings("unchecked")
 public class PagedListUtil {
 
     public static <T> PagedList<T> mockPagedList(List<T> list) {

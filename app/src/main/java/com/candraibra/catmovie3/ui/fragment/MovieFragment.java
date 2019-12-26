@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/5/19 7:29 AM
+ *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/5/19 7:24 AM
+ *  * Last modified 12/26/19 7:37 PM
  *
  */
 
@@ -47,8 +47,6 @@ public class MovieFragment extends Fragment {
     @BindView(R.id.shimmerLayoutTop)
     public ShimmerFrameLayout shimmer2;
 
-    private MovieViewModel viewModel;
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -73,7 +71,7 @@ public class MovieFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if (getActivity() != null) {
-            viewModel = obtainViewModel(getActivity());
+            MovieViewModel viewModel = obtainViewModel(getActivity());
             EspressoIdlingResource.increment();
             viewModel.mLiveMovieData().observe(this, results -> {
                 if (results != null) {

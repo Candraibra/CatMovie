@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 11/28/19 11:12 AM
+ *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 11/18/19 4:20 PM
+ *  * Last modified 12/26/19 7:37 PM
  *
  */
 
@@ -16,8 +16,6 @@ import androidx.lifecycle.ViewModel;
 import com.candraibra.catmovie3.data.Repository;
 import com.candraibra.catmovie3.data.entity.movie.MovieResults;
 import com.candraibra.catmovie3.data.entity.tv.TvResults;
-
-import java.util.List;
 
 public class DetailViewModel extends ViewModel {
 

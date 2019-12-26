@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/1/19 11:29 AM
+ *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/1/19 11:26 AM
+ *  * Last modified 12/26/19 7:37 PM
  *
  */
 
@@ -15,10 +15,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-import androidx.room.TypeConverter;
-import androidx.room.TypeConverters;
 
-import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;

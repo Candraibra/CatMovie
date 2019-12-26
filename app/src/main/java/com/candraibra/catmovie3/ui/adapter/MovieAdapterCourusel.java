@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/5/19 7:29 AM
+ *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/5/19 7:29 AM
+ *  * Last modified 12/26/19 7:37 PM
  *
  */
 
@@ -25,11 +25,9 @@ import java.util.List;
 
 public class MovieAdapterCourusel extends RecyclerView.Adapter<MovieAdapterCourusel.MyViewHolder> {
 
-    private Activity activity;
     private List<MovieResults> movieList;
 
     public MovieAdapterCourusel(Activity activity, List<MovieResults> movieList) {
-        this.activity = activity;
         this.movieList = movieList;
     }
 

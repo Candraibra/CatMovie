@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 7:44 AM
+ *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/2/19 7:00 AM
+ *  * Last modified 12/26/19 7:37 PM
  *
  */
 
@@ -34,13 +34,12 @@ public class FavoriteViewModelTest {
 
     @Rule
     public InstantTaskExecutorRule instantTaskExecutorRule = new InstantTaskExecutorRule();
-    private FavoriteViewModel viewModel;
     private Repository repository = mock(Repository.class);
 
 
     @Before
     public void setUp() {
-        viewModel = new FavoriteViewModel(repository);
+        FavoriteViewModel viewModel = new FavoriteViewModel(repository);
     }
 
     @Test

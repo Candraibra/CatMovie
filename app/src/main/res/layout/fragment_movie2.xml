@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><!--
   ~ /**
-  ~  * Created by Candra Ibra Sanie on 12/5/19 7:29 AM
+  ~  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
   ~  * Copyright (c) 2019 . All rights reserved.
-  ~  * Last modified 12/5/19 7:29 AM
+  ~  * Last modified 12/26/19 7:37 PM
   ~  */
   -->
 
@@ -114,9 +114,9 @@
                 android:id="@+id/rv_popular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:paddingStart="6dp"
                 android:paddingEnd="16dp"
-                android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_popular"
@@ -151,7 +151,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="DuplicateIncludedIds">
 
                     <include layout="@layout/layout_shimmer_item" />
 

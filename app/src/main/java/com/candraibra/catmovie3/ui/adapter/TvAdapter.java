@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 8:32 AM
+ *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/2/19 8:31 AM
+ *  * Last modified 12/26/19 7:37 PM
  *
  */
 
@@ -26,11 +26,9 @@ import java.util.List;
 
 public class TvAdapter extends RecyclerView.Adapter<TvAdapter.MyViewHolder> {
 
-    private Activity activity;
     private List<TvResults> tvList;
 
     public TvAdapter(Activity activity, List<TvResults> tvList) {
-        this.activity = activity;
         this.tvList = tvList;
     }
 
