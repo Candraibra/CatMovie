@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
+ *  * Created by Candra Ibra Sanie on 12/29/19 9:05 AM
  *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/26/19 7:37 PM
+ *  * Last modified 12/29/19 9:05 AM
  *
  */
 
@@ -108,6 +108,7 @@ public class MovieFragment extends Fragment {
                     EspressoIdlingResource.decrement();
                 }
             });
+
 
         }
     }
