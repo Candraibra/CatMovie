@@ -1,14 +1,14 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
- *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/26/19 7:37 PM
+ *  * Created by Candra Ibra Sanie on 2/19/20 4:26 PM
+ *  * Copyright (c) 2020 . All rights reserved.
+ *  * Last modified 2/19/20 4:26 PM
  *
  */
 
 package com.candraibra.catmovie3.ui.adapter;
 
-import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,14 +28,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
     private List<MovieResults> movieList;
 
-    public MovieAdapter(Activity activity, List<MovieResults> movieList) {
+    private Context mContext;
+
+    public MovieAdapter(Context context, List<MovieResults> movieList) {
         this.movieList = movieList;
+        this.mContext = context;
     }
 
-
-    private List<MovieResults> getMovieList() {
-        return movieList;
-    }
 
     @NonNull
     @Override
@@ -50,7 +49,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull MovieAdapter.MyViewHolder holder, int i) {
         holder.tvTitle.setText(movieList.get(i).getTitle());
         holder.tvDesc.setText(movieList.get(i).getOverview());
-        Glide.with(holder.itemView).load("https://image.tmdb.org/t/p/w500" + movieList.get(i).getPosterPath()).placeholder(R.drawable.loading).into(holder.imgPhoto);
+        Glide.with(mContext).load("https://image.tmdb.org/t/p/w500" + movieList.get(i).getPosterPath()).placeholder(R.drawable.loading).into(holder.imgPhoto);
     }
 
     @Override

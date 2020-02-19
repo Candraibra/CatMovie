@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/29/19 9:05 AM
- *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/29/19 9:05 AM
+ *  * Created by Candra Ibra Sanie on 2/19/20 4:26 PM
+ *  * Copyright (c) 2020 . All rights reserved.
+ *  * Last modified 1/13/20 3:11 PM
  *
  */
 
@@ -16,8 +16,11 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,6 +38,7 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MovieFragment extends Fragment {
     @BindView(R.id.rv_upcoming)
@@ -47,6 +51,9 @@ public class MovieFragment extends Fragment {
     @BindView(R.id.shimmerLayoutTop)
     public ShimmerFrameLayout shimmer2;
 
+
+    @BindView(R.id.container)
+    public ConstraintLayout container;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -111,6 +118,16 @@ public class MovieFragment extends Fragment {
 
 
         }
+    }
+
+    @OnClick(R.id.logo)
+    public void test() {
+        BlankFragment fragment2 = new BlankFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_container, fragment2);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
 }

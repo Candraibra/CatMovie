@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/2/19 8:32 AM
- *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/2/19 8:31 AM
+ *  * Created by Candra Ibra Sanie on 2/19/20 4:26 PM
+ *  * Copyright (c) 2020 . All rights reserved.
+ *  * Last modified 1/13/20 3:07 PM
  *
  */
 
@@ -42,6 +42,7 @@ public class FavoriteFragment extends Fragment {
     public ShimmerFrameLayout shimmerFrameLayout2;
     @BindView(R.id.rv_tv)
     public RecyclerView rvTv;
+
 
     private MoviePagedListAdapter movieAdapter;
     private TvPagedListAdapter tvAdapter;
