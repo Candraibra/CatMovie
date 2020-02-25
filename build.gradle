@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/11/19 11:02 AM
- *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/11/19 11:01 AM
+ *  * Created by Candra Ibra Sanie on 2/25/20 12:16 PM
+ *  * Copyright (c) 2020 . All rights reserved.
+ *  * Last modified 2/25/20 12:14 PM
  *
  */
 
@@ -15,7 +15,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:3.6.0'
         
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Candra Ibra Sanie on 12/26/19 7:37 PM
- *  * Copyright (c) 2019 . All rights reserved.
- *  * Last modified 12/26/19 7:37 PM
+ *  * Created by Candra Ibra Sanie on 2/25/20 12:16 PM
+ *  * Copyright (c) 2020 . All rights reserved.
+ *  * Last modified 2/25/20 12:16 PM
  *
  */
 
@@ -27,17 +27,11 @@ public class DetailViewModel extends ViewModel {
         this.repository = repository;
     }
 
-    public Integer getTvId() {
-        return tvId;
-    }
 
     public void setTvId(Integer tvId) {
         this.tvId = tvId;
     }
 
-    public Integer getMovieId() {
-        return movieId;
-    }
 
     public void setMovieId(Integer movieId) {
         this.movieId = movieId;
